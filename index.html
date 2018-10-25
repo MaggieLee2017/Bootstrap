@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>導覽列版本 - 首頁</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link href=" sticky-footer.css" rel="stylesheet">
+</head>
+
+  
+  
+<!-- JS:現在時間 -->
+<script language="JavaScript" type="text/javascript">
+    function ShowTime()
+    {
+        var NowDate = new Date();
+        var d = NowDate.getDay();
+        var dayNames = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
+        document.getElementById('showbox').innerHTML = '目前時間：' + NowDate.toLocaleString() + '（' + dayNames[d] + '）';
+        setTimeout('ShowTime()', 1000);
+    }
+</script>
+<body onload="ShowTime()">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <!-- navbar navbar-expand-lg navbar-light bg-light; navbar navbar-expand-lg navbar-dark bg-dark -->
+            <a class="navbar-brand" href="#"  style="font-family:Microsoft JhengHei;font-size:30px;"><img alt="Brand" src="./logo.png" href="#" width="25px" height="50px">  IP資產管理系統</a>    
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- 導覽目錄清單 -->
+           <div id="navbarSupportedContent" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right mr-auto"  style="font-family:Microsoft JhengHei;">
+                    <li class="nav-item active" ><a class="nav-link" href="#">目錄1</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="#">目錄2</a></li>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Dropdown
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                    <div class="nav navbar-nav navbar-right">
+                        <div class="navbar-text" id = "showbox"></div>
+                    </div>
+                    <!-- <p class="navbar-text">離開後請登出!</p> -->
+                </ul>
+           </div>
+           <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+           </form>
+    </nav>
+    <!-- footer -->
+    <footer class="footer">
+        <div class="container">
+          <span class="text-muted">財團法人電信技術中心</span>
+        </div>
+      </footer>
+</body>
+
+</html>
